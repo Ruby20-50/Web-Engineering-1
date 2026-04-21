@@ -4,7 +4,7 @@
 export class Waage {
     /*
       */
-    private gewicht : number;
+    private letztesGewicht : number;
 
 
     // Ergänzen Sie hier die Felddeklarationen, add field declarations here
@@ -20,6 +20,7 @@ export class Waage {
     }
 
     registriere(gewicht: number): void {
+    
         throw new Error("Not implemented yet");
     }
 
