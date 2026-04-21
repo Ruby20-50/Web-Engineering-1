@@ -2,6 +2,10 @@
  * Hinweise und Details zur Klasse und den einzelnen Methoden siehe Aufgabenblatt.
  */
 export class Waage {
+    /*
+      */
+    private gewicht : number;
+
 
     // Ergänzen Sie hier die Felddeklarationen, add field declarations here
 
@@ -20,4 +24,19 @@ export class Waage {
     }
 
     // Ergänzen Sie hier die fehlenden Methoden:
+    getTrend() : void {
+
+    }
+    getMin() : number {
+    }
+    getMax() : number {
+
+    }
+    getAnzahl() : number {
+
+    }
+    getDurchschnitt() : number {
+
+    }
 }
+    

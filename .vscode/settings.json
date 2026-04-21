@@ -4,7 +4,7 @@
   "chat.commandCenter.enabled": false,
   "workbench.settings.showAISearchToggle": false,
   "search.searchView.keywordSuggestions": false,
-  "chat.disableAIFeatures": true,
+  "chat.disableAIFeatures": false,
   // Code editing settings
   "github.copilot.editor.enableCodeActions": false,
   "github.copilot.renameSuggestions.triggerAutomatically": false,
