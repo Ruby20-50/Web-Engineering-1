@@ -5,19 +5,25 @@ export class Waage {
     /*
       */
     private letztesGewicht : number;
+    private hatGewischt : boolean;
 
 
     // Ergänzen Sie hier die Felddeklarationen, add field declarations here
 
     constructor() {
-        // Initialisieren Sie hier die Felder, initialize fields here
+    this.letztesGewicht = 0;
+    this.hatGewischt = false;    
+    
     }
 
     // Implementieren Sie die hier vorgegebenen Methoden:
 
     getLetztesGewicht(): number {
+        if(!this.hatGewischt){
         throw new Error("Not implemented yet");
     }
+    return this.letztesGewicht;
+}
 
     registriere(gewicht: number): void {
     
