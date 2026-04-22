@@ -32,6 +32,29 @@ test("registriere und getLetztesGewicht sind konsistent", () => {
     testee.registriere(2); // soll so funktionieren, also keinen Fehler werfen  
     expect(testee.getLetztesGewicht()).toBe(2);
 })
+test("getTrend zusteigend",()=>{
+    const scale = new Waage();
+    scale.registriere(50);
+    scale.registriere(55);
+    expect( scale.getTrend()).toBe(1);
+} );
+test("getTrend absteigend", ()=>{
+    const scale = new Waage();
+    scale.registriere(55);
+    scale.registriere(50);
+    expect(scale.getTrend()).toBe(-1);
+});
+test("getTrend monotone", ()=>{
+    const scale = new Waage();
+    scale.registriere(55);
+    scale.registriere(55);
+    expect(scale.getTrend).toBe(0);
+});
+test("getTrend", ()=>{
+    const scale = new Waage();
+    expect(()=>scale.getTrend()).toThrow();
+
+})
 
 /* 
 Template für eigene Tests

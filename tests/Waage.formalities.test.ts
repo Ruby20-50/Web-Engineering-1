@@ -40,7 +40,7 @@ describe.each([
     (classes.length > 0 || functions.length > 0) && describe(`Deklarationen in ${fileName}`, () => {
         let module: any
         beforeAll(async () => {
-            module = await import(`../${fileName}`);
+            module = require(`../${fileName}`);
         });
 
         classes.length > 0 && describe.each(classes)("Klasse $name", ({ name, methods }) => {
