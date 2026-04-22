@@ -37,23 +37,23 @@ test("registriere und getLetztesGewicht sind konsistent", () => {
     testee.registriere(2); // soll so funktionieren, also keinen Fehler werfen  
     expect(testee.getLetztesGewicht()).toBe(2);
 })
-test("getTrend zusteigend",()=>{
+test("getTrend zunehmend",()=>{
     const scale = new Waage();
     scale.registriere(50);
     scale.registriere(55);
     expect( scale.getTrend()).toBe(1);
 } );
-test("getTrend absteigend", ()=>{
+test("getTrend abnehmend", ()=>{
     const scale = new Waage();
     scale.registriere(55);
     scale.registriere(50);
     expect(scale.getTrend()).toBe(-1);
 });
-test("getTrend monotone", ()=>{
+test("getTrend gleichbleibend", ()=>{
     const scale = new Waage();
     scale.registriere(55);
     scale.registriere(55);
-    expect(scale.getTrend).toBe(0);
+    expect(scale.getTrend()).toBe(0);
 });
 test("getTrend", ()=>{
     const scale = new Waage();
@@ -64,7 +64,8 @@ test("getMin test", ()=>{
     const scale = new Waage();
     scale.registriere(60);
     scale.registriere(50);
-    expect(scale.getMin).toBe(50);
+    scale.registriere(55);
+    expect(scale.getMin()).toBe(50);
 });
 test("getMin throws an error when letzteGewicht is not assigned yet", ()=>{
 const scale = new Waage();
@@ -74,18 +75,28 @@ test("getMax test", ()=>{
     const scale = new Waage();
     scale.registriere(70);
     scale.registriere(50);
-    expect(scale.getMax).toBe(70);
+    scale.registriere(60);
+    expect(scale.getMax()).toBe(60);
 });
 test("getMax throws an error when letzteGewicht is not assigned yet", ()=>{
 const scale = new Waage();
  expect(()=> scale.getMax()).toThrow();
 });
+test("getAnzahl test", ()=>{
+    const scale = new Waage();
+    scale.registriere(80);
+    expect(scale.getAnzahl()).toBe(1);});
 
+    test("getDurchschnitt test", ()=>{
+        const scale = new Waage();
+        scale.registriere(54);
+        scale.registriere(60);
+        scale.registriere(57);
+        scale.registriere(56);
+        expect(scale.getDurchschnitt()).toBeCloseTo(56.75);
+    });
+    test("getDurchschnitt throws an Error", ()=>{
+        const scale = new Waage();
+        expect(()=> scale.getDurchschnitt()).toThrow();
+    });
 
-/* 
-Template für eigene Tests
-
-test("name", ()=>{
-
-})
-*/

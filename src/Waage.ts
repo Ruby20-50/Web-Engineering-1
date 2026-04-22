@@ -1,4 +1,3 @@
-import { AsyncLocalStorage } from "async_hooks";
 
 /**
  * Hinweise und Details zur Klasse und den einzelnen Methoden siehe Aufgabenblatt.
@@ -7,9 +6,9 @@ export class Waage {
     /*
       */
     private letztesGewicht : number;
-    
     private vorherigeGewicht : number;
     private anzahl : number;
+    private summe : number;
     
 
     // Ergänzen Sie hier die Felddeklarationen, add field declarations here
@@ -18,6 +17,7 @@ export class Waage {
     this.letztesGewicht = 0;
     this.vorherigeGewicht = 0;
     this.anzahl = 0;
+    this.summe = 0;
     
     }
 
@@ -41,10 +41,12 @@ export class Waage {
         this.vorherigeGewicht= this.letztesGewicht;
         this.letztesGewicht = gewicht;
         this.anzahl ++;
+        this.summe += gewicht;
       
     }else{
         this.letztesGewicht = gewicht;
         this.anzahl++;
+         this.summe += gewicht;
     }
     }
 
@@ -84,14 +86,10 @@ export class Waage {
         return this.anzahl;
     }
     getDurchschnitt() : number {
-        /*how do i create a space for every recorded weight so that it is 
-        calculated here?
-        arrays are forbidden!
-        */
-        if(this.letztesGewicht = 0)
-            throw new Error("noch kein Gewicht erfasst");
-        
-        return 1;
+        if(this.letztesGewicht == 0){
+            throw new Error("noch kein Gewicht erfasst");}
+        let average = this.summe / this.anzahl;
+        return average;
     }
 }
     
