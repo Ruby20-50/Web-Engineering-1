@@ -55,14 +55,11 @@ export class Waage {
         if(this.letztesGewicht == 0){
         throw new Error("es muss erst mal Gewicht registiert!");
         }
-        if(this.letztesGewicht < this.vorherigeGewicht)  {
-            return -1;
-        }else if(this.letztesGewicht > this.vorherigeGewicht){
+        if(this.letztesGewicht < this.vorherigeGewicht)  
+          return -1;
+         if(this.letztesGewicht > this.vorherigeGewicht)
             return 1;
-        }else if(this.letztesGewicht == this.vorherigeGewicht){
             return 0;
-        }
-          return this.letztesGewicht - this.vorherigeGewicht;
     }
     
     getMin() : number {
@@ -80,7 +77,6 @@ export class Waage {
         return this.letztesGewicht;
         else (this.letztesGewicht < this.vorherigeGewicht)
         return this.vorherigeGewicht;
-     
     }
     getAnzahl() : number {
         return this.anzahl;
