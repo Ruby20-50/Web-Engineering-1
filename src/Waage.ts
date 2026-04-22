@@ -38,7 +38,6 @@ export class Waage {
         throw new Error("Waagezahl darf nicht groesser als 999 sein");
     }
     if(this.letztesGewicht != 0 ){
-
         this.vorherigeGewicht= this.letztesGewicht;
         this.letztesGewicht = gewicht;
         this.anzahl ++;
@@ -65,12 +64,16 @@ export class Waage {
     }
     
     getMin() : number {
+        if(this.letztesGewicht == 0 )
+            throw new Error();
         if(this.letztesGewicht < this.vorherigeGewicht)
         return this.letztesGewicht;
         else (this.letztesGewicht > this.vorherigeGewicht)
         return this.vorherigeGewicht;
     }
     getMax() : number {
+         if(this.letztesGewicht == 0 )
+            throw new Error();
          if(this.letztesGewicht > this.vorherigeGewicht)
         return this.letztesGewicht;
         else (this.letztesGewicht < this.vorherigeGewicht)
