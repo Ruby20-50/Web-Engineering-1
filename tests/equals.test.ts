@@ -1,17 +1,17 @@
 test("== mit String 42 und Zahl 42", () => {
     //ts-ignore
-    //npexpect( "42" == 42).toBeTruthy();
+    expect( "42" == 42).toBeTruthy();
 })
 test("-0 und 0 vergleichen", () =>{
     expect(-0 == 0).toBeTruthy();
 })
 test(" == with false and 0", () =>{
      //ts-ignore
-   // expect(false == 0).toBeTruthy();
+    expect(false == 0).toBeTruthy();
 })
 test("== with {} and []", () =>{
     //ts-ignore
-   // expect({} === []).not.toBeTruthy()
+   expect({} === []).not.toBeTruthy()
 })
 test("toEqual with {} and []", () => {
     expect({}).not.toEqual([]);
@@ -23,6 +23,7 @@ test(" toEqual with 1 String and true ", () =>{
     expect("1").not.toEqual(true)
 })
 test("== with 0 string and false", ()=>{
+     //ts-ignore
     expect(0 == false).toBeTruthy();
 })
 test("notToBe", () => {
@@ -38,5 +39,6 @@ test("string toStrictEqual string", ()=>{
     expect("Halo").toStrictEqual("Halo")// it had to be false :D
 })
 test("=== 0 with false",() =>{
-    expect(0 === false).toBeFalsy()
+     //ts-ignore
+   expect(0 === false).toBeFalsy()
 })
