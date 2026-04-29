@@ -23,8 +23,20 @@ test(" toEqual with 1 String and true ", () =>{
     expect("1").not.toEqual(true)
 })
 test("== with 0 string and false", ()=>{
-    
+    expect(0 == false).toBeTruthy();
 })
 test("notToBe", () => {
     expect("to be or ").not.toBe("that is the question :P");
 } )
+test("test NaN with toEqual", () =>{
+    expect(NaN).toEqual(NaN);
+})
+test("test NaN with toStrictEqual", () =>{
+    expect(NaN).toStrictEqual(NaN);// i dont know why it is right I tried first not.toStrictEqual()
+})
+test("string toStrictEqual string", ()=>{
+    expect("Halo").toStrictEqual("Halo")// it had to be false :D
+})
+test("=== 0 with false",() =>{
+    expect(0 === false).toBeFalsy()
+})
