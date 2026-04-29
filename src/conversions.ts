@@ -7,7 +7,7 @@ export class Conversions {
     static toBoolean(x: any): boolean {
           if(x === null) throw new Error("value can't be undefined");
         if(x === "false") return false;
-        return Boolean([])
+        return Boolean(x)
     }
     static toString(x: any): string {
           if(x === null) throw new Error("value can't be undefined");
