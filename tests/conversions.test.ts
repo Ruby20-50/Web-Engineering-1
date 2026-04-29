@@ -76,3 +76,37 @@ test("[] with toBoolean toBeTruthy", ()=>{
 test("an object with toBoolean toBeTruthy", ()=>{
      expect(Conversions.toBoolean({})).toBeTruthy()
 })
+// toString tests
+test("[] with toString toEqual empty string", () =>{
+    expect(Conversions.toString([])).toEqual("")
+})
+test("[] with toString toStrictEqual empty string", () =>{
+    expect(Conversions.toString([])).toStrictEqual("")
+})
+test("[23] with toString toEqual [23]", () =>{
+    expect(Conversions.toString([23])).toEqual("23")
+})
+test("NaN with toString toEqual NaN", () =>{
+    expect(Conversions.toString(NaN)).toEqual("NaN")
+})
+test("-Infinity with toString toEqual -Infinity", () =>{
+    expect(Conversions.toString(-Infinity)).toEqual("-Infinity")
+})
+test("Infinity with toString toEqual Infinity", () =>{
+    expect(Conversions.toString(Infinity)).toEqual("Infinity")
+})
+test("-0 with toString toEqual -0", () =>{
+    expect(Conversions.toString(-0)).toEqual("0")
+})
+test("-0 with toString toStrictEqual -0", () =>{
+    expect(Conversions.toString(-0)).toStrictEqual("0")
+})
+test("false with toString toEqual false", () =>{
+    expect(Conversions.toString(false)).toEqual("false")
+})
+test("true with toString toEqual true", () =>{
+    expect(Conversions.toString(true)).toEqual("true")
+})
+test("undefined with toString toEqual undefined", () =>{
+    expect(Conversions.toString(undefined)).toEqual("undefined")
+})
