@@ -16,11 +16,18 @@ export class StringManipulator extends AbstractStringManipulator {
     }
 
     override registerTernaryOperations(): void {
-        // Fügen Sie hier die ternären Operationen hinzu
+       this.addTernaryOperation("replace",(txt1, txt2, txt3) => {
+         let index = txt1.indexOf(txt2);
+         return txt1.slice(0, index) + txt3 + txt1.slice(index + txt2.length)} );
     }
     
     override registerVariadicOperations() {
-        // Fügen Sie hier die variadischen Operationen hinzu
+       this.addVariadicOperation("concat", (...stringss) => {
+         let txt = "";
+         for ( const element of stringss) {
+           txt += element; 
+         }
+         return txt});
     }
     
     // Hier sind KEINE weiteren Methoden oder Felder zu ergänzen!
