@@ -10,8 +10,14 @@ import sax from "sax";
 export function countElements(xmlAsString: string, elementName?: string) {
     const parser = sax.parser(true);
     let count = 0;
-
-    // Ergänzen Sie hier den Algorithmus
+    parser.ontext = (t) => { }
+    parser.onopentag = (tag) => {
+    if(!elementName || tag.name == elementName)
+        count++;
+    }
+    parser.onattribute = (attr) => { }
+   
+    
     
 
     parser.write(xmlAsString).close();
@@ -29,7 +35,11 @@ export function countAttributes(xmlAsString: string, elementName?: string) {
     const parser = sax.parser(true);
     let count = 0;
 
-    // Ergänzen Sie hier den Algorithmus
+    parser.onopentag = (tag) => {
+        if(!elementName || tag.name == elementName){
+            count += Object.keys(tag.attributes).length;
+        }
+    }
 
     parser.write(xmlAsString).close();
     return count;
@@ -48,7 +58,10 @@ export function countTextLength(xmlAsString: string, elementName?: string) {
     let length = 0;
 
 
-    // Ergänzen Sie hier den Algorithmus
+   parser.ontext = (t)=>{
+    if(!elementName)
+        length += t.length;
+   }
 
     parser.write(xmlAsString).close();
     return length;
