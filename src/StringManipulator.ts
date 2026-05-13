@@ -5,11 +5,14 @@ export class StringManipulator extends AbstractStringManipulator {
     // Hier sind KEINE weiteren Methoden oder Felder zu ergänzen!
 
     override registerUnaryOperations() {
-        // Fügen Sie hier die unären Operationen hinzu
+       this.addUnaryOperation("uppercase", (s) => s.toUpperCase());
+       this.addUnaryOperation("trim", (s) => s.trim());
+       this.addUnaryOperation("lowercase", (s) => s.toLowerCase());
     }
 
     override registerBinaryOperations() {
-        // Fügen Sie hier die binären Operationen hinzu
+       this.addBinaryOperation("append", (txt1, txt2) => txt1 + txt2);
+       this.addBinaryOperation("prepend", (txt1, txt2) => txt2 + txt1 );
     }
 
     override registerTernaryOperations(): void {
