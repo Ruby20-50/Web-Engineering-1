@@ -16,8 +16,8 @@ const LEER: Leer = " ";
 export class VierGewinnt {
 
     // Ergänzen Sie hier Felder nach Bedarf
-    private sizeX : number;
-    private sizeY : number;
+    private _sizeX : number;
+    private _sizeY : number;
     private board : (Leer | Spieler)[][]; //this way we allow only stones or empty spaces
 
    /**
@@ -29,10 +29,11 @@ export class VierGewinnt {
     constructor(sizeX: number = 7, sizeY: number = 6) {
          if(sizeX < 1 || sizeY < 1)
         throw new Error("size must be at least 1");
-        this.sizeX = sizeX;
-        this.sizeY = sizeY;
+        this._sizeX = sizeX;
+        this._sizeY = sizeY;
         this.board = [];
         for(let i = 0; i < sizeX; i++){
+            this.board[i] = []
             for(let j = 0; j < sizeY; j++){
                 this.board[i][j] = LEER;
             }
@@ -42,13 +43,13 @@ export class VierGewinnt {
 
     public get sizeX() {
        // throw new Error("Not implemented");
-        return this.sizeX;
+        return this._sizeX;
     }
     
     public get sizeY() {
 
         //throw new Error("Not implemented");
-        return this.sizeY;
+        return this._sizeY;
     }
 
     public set(x: number, stein: Spieler): boolean {
