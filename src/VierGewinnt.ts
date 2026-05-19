@@ -16,17 +16,39 @@ const LEER: Leer = " ";
 export class VierGewinnt {
 
     // Ergänzen Sie hier Felder nach Bedarf
+    private sizeX : number;
+    private sizeY : number;
+    private board : (Leer | Spieler)[][]; //this way we allow only stones or empty spaces
 
+   /**
+    * a constructor creates a new VierGewinnt game board
+    * @param sizeX is number of columns
+    * @param sizeY is number of rows
+    * @throws Error if sizeX or sizeY is less than 1
+   */
     constructor(sizeX: number = 7, sizeY: number = 6) {
-        throw new Error("Not implemented");
-    }
+         if(sizeX < 1 || sizeY < 1)
+        throw new Error("size must be at least 1");
+        this.sizeX = sizeX;
+        this.sizeY = sizeY;
+        this.board = [];
+        for(let i = 0; i < sizeX; i++){
+            for(let j = 0; j < sizeY; j++){
+                this.board[i][j] = LEER;
+            }
+            
+        }
+}   
 
     public get sizeX() {
-        throw new Error("Not implemented");
+       // throw new Error("Not implemented");
+        return this.sizeX;
     }
     
     public get sizeY() {
-        throw new Error("Not implemented");
+
+        //throw new Error("Not implemented");
+        return this.sizeY;
     }
 
     public set(x: number, stein: Spieler): boolean {
