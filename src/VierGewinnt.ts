@@ -145,7 +145,7 @@ rDiagonalWinner(): Spieler | null {
          for(let y = 0; y < this._sizeY; y++ ){
             let Wstone = this.get(x,y);
             if(Wstone !== LEER){
-                for(let step = 1; step < this._sizeY -3; step++){
+                for(let step = 1; step < this._sizeY ; step++){
                     if(this.get(x + step, y + step ) == Wstone){
                         counter++;
                          if(counter == 4)
@@ -167,7 +167,7 @@ lDiagonalWinner(): Spieler | null {
          for(let y = this._sizeY; y > 0; y-- ){
             let Wstone = this.get(x,y);
             if(Wstone !== LEER){
-                for(let step = 1; step < this._sizeY - 3; step++){
+                for(let step = 1; step < this._sizeY; step++){
                     if(this.get(x + step, y - step ) == Wstone){
                         counter++;
                          if(counter == 4)

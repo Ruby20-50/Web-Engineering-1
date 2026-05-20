@@ -78,12 +78,34 @@ test("test rowWinner", ()=>{
     expect(game.rowWinner()).toBe("X");
 
 })
-test("test rowWinner", ()=>{
+test("test cowWinner", ()=>{
     const game = new VierGewinnt();
     game.set(0,"X"); game.set(1,"O");
     game.set(0,"X"); game.set(1,"O");
     game.set(0,"X"); game.set(1,"O");
     game.set(0,"X");
     expect(game.colWinner()).toBe("X");
+
+})
+test("test rdiagonalWinner", ()=>{
+    const game = new VierGewinnt();
+    game.set(0,"X"); game.set(1,"O");
+    game.set(1,"X"); game.set(2,"O");
+    game.set(2,"X"); game.set(3,"O");
+    game.set(2,"X"); game.set(3,"O");
+    game.set(3,"X"); game.set(4,"O");
+    game.set(3,"X");
+    expect(game.rDiagonalWinner()).toBe("X");
+
+})
+test("test ldiagonalWinner", ()=>{
+    const game = new VierGewinnt();
+    game.set(3,"X"); game.set(2,"O");
+    game.set(2,"X"); game.set(1,"O");
+    game.set(0,"X"); game.set(1,"O");
+    game.set(1,"X"); game.set(0,"O");
+    game.set(0,"X"); game.set(4,"O");
+    game.set(0,"X");
+    expect(game.lDiagonalWinner()).toBe("X");
 
 })
