@@ -19,7 +19,7 @@ export class VierGewinnt {
     private _sizeX : number;
     private _sizeY : number;
     private board : (Leer | Spieler)[][]; //this way we allow only stones or empty spaces
-
+    private lastInput : Spieler | Leer;
    /**
     * a constructor creates a new VierGewinnt game board
     * @param sizeX is number of columns
@@ -31,6 +31,7 @@ export class VierGewinnt {
         throw new Error("size must be at least 1");
         this._sizeX = sizeX;
         this._sizeY = sizeY;
+        this.lastInput = LEER;
         this.board = [];
         for(let i = 0; i < sizeX; i++){
             this.board[i] = []
@@ -51,13 +52,42 @@ export class VierGewinnt {
         //throw new Error("Not implemented");
         return this._sizeY;
     }
-
-    public set(x: number, stein: Spieler): boolean {
-        throw new Error("Not implemented");
+    public get _lastInput(){
+        return this.lastInput;
     }
 
+    public set(x:  number, stein: Spieler): boolean {
+        if(x > this._sizeX || x < 0){
+            throw Error("x is outside the game field");
+        }
+        if(this.lastInput === stein){
+            throw Error("a Player cannot play two times in row or enter MT value!!");
+        }
+        
+        const row = this.findTheFreeRow(x);
+        if(row != -1){
+            this.board[x][row] = stein; 
+            this.lastInput = stein;
+            return true;
+        }else{
+            return false;}
+    }
+    findTheFreeRow(x : number ) : number{
+        for(let i = 0; i < this._sizeY; i++){
+            let cell = this.get(x,i);
+            if(cell == LEER){
+                return i;
+            }
+        }
+        return -1
+    }
     public get(x: number, y: number): Spieler | Leer {
-        throw new Error("Not implemented");
+         if(x > this._sizeX || x < 0)
+            throw new Error("outside the game field");
+         if(y > this._sizeY|| y < 0)
+            throw new Error("outside the game field");  
+        let stone : Spieler | Leer = this.board[x][y]; 
+        return stone;
     }
 
     public istVoll(): boolean {
