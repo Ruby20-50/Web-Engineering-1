@@ -91,7 +91,7 @@ export class VierGewinnt {
     }
 
     public istVoll(): boolean {
-          throw new Error("hi");
+        return this.board.toString().includes(" ");  
     }
 
     public gewinner(): Spieler | null {
