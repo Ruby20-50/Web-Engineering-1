@@ -2,7 +2,7 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "registry.bht-berlin.de:443/templates/container/we:SS26a",
+	"image": "jevopi/we:SS26d",
 	
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
