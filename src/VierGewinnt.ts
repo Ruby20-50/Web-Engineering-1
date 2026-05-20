@@ -91,14 +91,94 @@ export class VierGewinnt {
     }
 
     public istVoll(): boolean {
-        throw new Error("Not implemented");
+          throw new Error("hi");
     }
 
     public gewinner(): Spieler | null {
-        throw new Error("Not implemented");
+        if(this.rowWinner() != null)
+            return this.rowWinner();
+        else if(this.colWinner() != null)
+            return this.colWinner();
+        else if(this.rDiagonalWinner()!=null)
+            return this.rDiagonalWinner();
+        else
+            return this.lDiagonalWinner();
     }
+    rowWinner(): Spieler | null{
+        let counter = 1;
+      
+        for(let y = 0; y < this._sizeY-1; y++){
+            for(let x = 0; x < this._sizeX-1; x++){
+           let Wstone = this.get(x,y);
+            if( Wstone !== LEER && Wstone === this.get(x+1,y)){
+                counter++;
+                if(counter == 4)
+                    return Wstone;
+                }
+            else{
+                counter = 1;
+        }
+    }}
+    return null;
+}
+colWinner(): Spieler | null{
+        let counter = 1;
+        
+            for(let x = 0; x < this._sizeX-1; x++){
+                for(let y = 0; y < this._sizeY-1; y++){
+           let Wstone = this.get(x,y);
+            if( Wstone !== LEER && Wstone === this.get(x,y+1)){
+                counter++;
+                if(counter == 4)
+                    return Wstone;
+                }
+            else{
+                counter = 1;
+        }
+    }}
+    return null;
+}
+rDiagonalWinner(): Spieler | null {
 
-    // Ergänzen Sie hier Hilfsmethoden nach Bedarf.
-
-
+    let counter = 1;
+    for(let x = 0; x < this._sizeX ; x++){
+         for(let y = 0; y < this._sizeY; y++ ){
+            let Wstone = this.get(x,y);
+            if(Wstone !== LEER){
+                for(let step = 1; step < this._sizeY -3; step++){
+                    if(this.get(x + step, y + step ) == Wstone){
+                        counter++;
+                         if(counter == 4)
+                    return Wstone;
+                    }else{
+                      counter = 1;
+                    }
+                }
+            }
+        }
+    }
+        return null;
+}
+lDiagonalWinner(): Spieler | null {
+   
+    let counter = 1;
+   
+    for(let x = 0; x < this._sizeX ; x++){
+         for(let y = this._sizeY; y > 0; y-- ){
+            let Wstone = this.get(x,y);
+            if(Wstone !== LEER){
+                for(let step = 1; step < this._sizeY - 3; step++){
+                    if(this.get(x + step, y - step ) == Wstone){
+                        counter++;
+                         if(counter == 4)
+                    return Wstone;
+                    }else{
+                      counter = 1;
+                    }
+                }
+            }
+        }
+    }
+        return null;
+}
 }

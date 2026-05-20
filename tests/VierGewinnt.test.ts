@@ -66,3 +66,24 @@ test("test that lastInput take the value of the last turn", ()=>{
     game.set(3,"O");
     expect(game._lastInput).toBe("O");
 })
+test("test rowWinner", ()=>{
+    const game = new VierGewinnt();
+    game.set(0,"X");
+    game.set(0,"O");
+    game.set(1,"X");
+    game.set(1,"O");
+    game.set(2,"X");
+    game.set(2,"O");
+    game.set(3,"X");
+    expect(game.rowWinner()).toBe("X");
+
+})
+test("test rowWinner", ()=>{
+    const game = new VierGewinnt();
+    game.set(0,"X"); game.set(1,"O");
+    game.set(0,"X"); game.set(1,"O");
+    game.set(0,"X"); game.set(1,"O");
+    game.set(0,"X");
+    expect(game.colWinner()).toBe("X");
+
+})
