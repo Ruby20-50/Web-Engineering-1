@@ -52,9 +52,7 @@ export class VierGewinnt {
         //throw new Error("Not implemented");
         return this._sizeY;
     }
-    public get _lastInput(){
-        return this.lastInput;
-    }
+    
 
     public set(x:  number, stein: Spieler): boolean {
         if(x > this._sizeX || x < 0){
@@ -72,15 +70,7 @@ export class VierGewinnt {
         }else{
             return false;}
     }
-    findTheFreeRow(x : number ) : number{
-        for(let i = 0; i < this._sizeY; i++){
-            let cell = this.get(x,i);
-            if(cell == LEER){
-                return i;
-            }
-        }
-        return -1
-    }
+    
     public get(x: number, y: number): Spieler | Leer {
          if(x > this._sizeX || x < 0)
             throw new Error("outside the game field");
@@ -120,8 +110,8 @@ export class VierGewinnt {
         }
     }}
     return null;
-}
-colWinner(): Spieler | null{
+    }
+    colWinner(): Spieler | null{
         let counter = 1;
         
             for(let x = 0; x < this._sizeX-1; x++){
@@ -137,8 +127,8 @@ colWinner(): Spieler | null{
         }
     }}
     return null;
-}
-rDiagonalWinner(): Spieler | null {
+    }   
+    rDiagonalWinner(): Spieler | null {
 
     let counter = 1;
     for(let x = 0; x < this._sizeX ; x++){
@@ -158,8 +148,8 @@ rDiagonalWinner(): Spieler | null {
         }
     }
         return null;
-}
-lDiagonalWinner(): Spieler | null {
+    }
+    lDiagonalWinner(): Spieler | null {
    
     let counter = 1;
    
@@ -180,5 +170,17 @@ lDiagonalWinner(): Spieler | null {
         }
     }
         return null;
-}
+    }
+    public get _lastInput(){
+        return this.lastInput;
+    }
+    findTheFreeRow(x : number ) : number{
+        for(let i = 0; i < this._sizeY; i++){
+            let cell = this.get(x,i);
+            if(cell == LEER){
+                return i;
+            }
+        }
+        return -1
+    }
 }
