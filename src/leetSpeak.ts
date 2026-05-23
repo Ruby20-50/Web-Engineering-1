@@ -37,13 +37,11 @@ export function leetSpeakIter(input : string) : string{
     return leet;
     
 } 
-export function leetSpeakRek(text : string): string{
-    let i = 0;
-    if(i == text.length)
-        return text;
-    let converted = "";
-     converted + leetSpeakSingleLetter(text[i]);
-    return converted + text.slice(i);
+export function leetSpeakRek(input : string): string{
+   if(input.length < 1)
+        return input;
+    return leetSpeakSingleLetter(input[0]) + leetSpeakRek(input.slice(1));
+
 
 //  what are we going to do here?
 //  we are going to input a text as a prameter 
