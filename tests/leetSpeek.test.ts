@@ -1,4 +1,4 @@
-import { leetSpeakIter, leetSpeakSingleLetter } from "../src/leetSpeak";
+import { leetSpeakIter, leetSpeakRek, leetSpeakSingleLetter } from "../src/leetSpeak";
 
 test("test leetSpeakSingleLetter throws error for strings longer than 1", ()=>{
     expect(()=> leetSpeakSingleLetter("hi")).toThrow("this function receives only one character!");
@@ -11,3 +11,9 @@ test("test leetSpeakSingleLetter returns the same letter", ()=>{
 test("leetSpeakIter", ()=>{
     expect(leetSpeakIter("Hi")).toBe("H1");
 })
+test("leetSpeakRek terminates", ()=>{
+    expect(leetSpeakRek("")).toBe("");
+});
+test("leetSpeakRek convert to leet", ()=>{
+    expect(leetSpeakRek("Hi")).toBe("H1");
+});

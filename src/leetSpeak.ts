@@ -37,3 +37,16 @@ export function leetSpeakIter(input : string) : string{
     return leet;
     
 } 
+export function leetSpeakRek(text : string): string{
+    let i = 0;
+    if(i == text.length)
+        return text;
+    let converted = "";
+     converted + leetSpeakSingleLetter(text[i]);
+    return converted + text.slice(i);
+
+//  what are we going to do here?
+//  we are going to input a text as a prameter 
+// and every take the first character and filter it through leetSpeakSingleLetter
+// until
+}
