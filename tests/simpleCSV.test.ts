@@ -11,3 +11,7 @@ test("splits on \n", ()=>{
 test("splits on , and \n", ()=>{
     expect(parseCSV("a,b,c\ne,f,g")).toEqual([["a","b","c"],["e","f","g"]]);
 })
+
+test("csv on MT string", ()=>{
+    expect(parseCSV("")).toEqual([[""]]);
+})
