@@ -17,3 +17,14 @@ test("leetSpeakRek terminates", ()=>{
 test("leetSpeakRek convert to leet", ()=>{
     expect(leetSpeakRek("Hi")).toBe("H1");
 });
+test("leetSpeakRek convert more complex to leet", ()=>{
+    expect(leetSpeakRek("Hello world")).toBe("H3llo world");
+});
+test("leetSpeakRek convert more complex to leet2", ()=>{
+    expect(leetSpeakRek("BIGSIEZ")).toBe("8165132");
+
+});
+test("leetSpeakRek convert from numbers to leet2", ()=>{
+    expect(leetSpeakRek("8165132")).toBe("8165132");
+
+});
