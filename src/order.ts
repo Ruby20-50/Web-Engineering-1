@@ -32,7 +32,16 @@ export function orderSync(friend: FriendS): string {
  * @param eatPizza  Callback, der aufgerufen wird, wenn die Pizza endlich da ist
  */
 export function orderCallback(friend: FriendC, eatPizza: (pizza: string) => void) {
-    throw new Error("Function orderCallback not implemented");
+   friend.driveToPizzeria(()=> {
+    friend.readMenu((pizzas : string[])=>{
+       const gewaehlt = pizzas[0]
+       friend.selectPizza(gewaehlt,()=>{
+        friend.bringPizza((pizza)=>{
+            eatPizza(pizza)
+        });
+       } )
+    })
+   });
 }
 
 /**
