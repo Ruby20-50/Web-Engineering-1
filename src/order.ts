@@ -60,7 +60,20 @@ export function orderCallback(friend: FriendC, eatPizza: (pizza: string) => void
  * @returns Versprechen, das es eine Pizza gibt!
  */
 export function orderPromise(friend: FriendP): Promise<string> {
-    throw new Error("Function orderPromise not implemented");
+    const arrive = friend.driveToPizzeria()
+    
+    const read = arrive.then(()=> {
+        return friend.readMenu();
+    })
+
+    const packed = read.then((pizzas: string[] )=>{
+     const pizza = pizzas[0];
+     return friend.selectPizza(pizza) 
+    });     
+    //return packed.then(friend.bringPizza);
+    return packed.then(()=>{
+        return friend.bringPizza()
+    })  
 }
 
 /**
