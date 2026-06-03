@@ -95,4 +95,13 @@ export async function orderAsyncAwait(friend: FriendA): Promise<string> {
     const deliver = await friend.bringPizza()
     return deliver;
 }
-
+export async function orderAsyncAwaitWithPromise(friend: FriendP): Promise<string> {
+    
+    const arrive = await friend.driveToPizzeria()
+    const readMenu = await friend.readMenu()
+    const packed = await friend.selectPizza(readMenu[0])
+    const deliver = await friend.bringPizza()
+    return deliver;
+}
+//What differences to orderAsyncAwait do you notice? Why is that?
+//await deals with promises regardless of how it was made

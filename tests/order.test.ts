@@ -3,7 +3,7 @@ import { FriendC } from "../src/friends/FriendC";
 import { FriendP } from "../src/friends/FriendP";
 import { FriendS } from "../src/friends/FriendS";
 
-import { orderAsyncAwait, orderCallback, orderPromise, orderSync } from "../src/order";
+import { orderAsyncAwait, orderAsyncAwaitWithPromise, orderCallback, orderPromise, orderSync } from "../src/order";
 
 /**
  * Test für die synchrone Variante.
@@ -56,4 +56,12 @@ test("Freund mit async/await", async () => {
     expect(actualPizza).toBe(friend.selectedPizza);
     expect(friend.state).toBe("zu Hause bin");
 });
-
+/**
+ * test for 
+ */
+test("order Async await with promise ", async () => {
+    const friend = new FriendP();
+    const actualPizza = await orderAsyncAwaitWithPromise(friend);
+    expect(actualPizza).toBe(friend.selectedPizza);
+    expect(friend.state).toBe("zu Hause bin");
+});
