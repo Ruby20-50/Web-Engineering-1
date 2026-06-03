@@ -27,13 +27,23 @@ interface Item {
 }
 
 
-export function getWikipediaPageViews(article: string, year: number) {
+export async function getWikipediaPageViews(article: string, year: number) {
     const from = `${year}010100`;
-    const to = `${year + 1}010100`;    
+    const to = `${year + 1}010100`;   
     const url = encodeURI(`${api}/${project}/${access}/${agent}/${article}/${granularity}/${from}/${to}`);
-    
-    throw new Error("Not implemented yet");
-}
+
+        let response = await fetch(url);
+        if(!response.ok){
+            return -1;
+        }
+        let data = await response.json()
+        let items = data.items
+        let views = 0;
+        for(let i = 0; i < items.length; i++ ){
+                views += items[i].views
+        }        
+        return views;
+    }
 
 export function getWikipediaPageViewsPromises(article: string, year: number) {
     const from = `${year}010100`;
@@ -42,3 +52,4 @@ export function getWikipediaPageViewsPromises(article: string, year: number) {
     
     throw new Error("Not implemented yet");
 }
+const url = "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/de.wikipedia.org/all-access/all-agents/JavaScript/monthly/2024010100/2025010100"

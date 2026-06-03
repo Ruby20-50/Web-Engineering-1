@@ -10,6 +10,10 @@ test('async/await Article does not exist', async () => {
     expect(views).toBe(-1);
 });
 
+test("getWikiPageViews can fetch with valid data",async ()=>{
+    const views = await getWikipediaPageViews("JavaScript",2024);
+    expect(views).toBe(162526)
+})
 
 test('Promise Future_(Programmierung) 2024', async () => {
     const views = await getWikipediaPageViewsPromises("Future_(Programmierung)", 2024);
