@@ -50,6 +50,34 @@ export function getWikipediaPageViewsPromises(article: string, year: number) {
     const to = `${year + 1}010100`;
     const url = encodeURI(`${api}/${project}/${access}/${agent}/${article}/${granularity}/${from}/${to}`);
     
-    throw new Error("Not implemented yet");
-}
-const url = "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/de.wikipedia.org/all-access/all-agents/JavaScript/monthly/2024010100/2025010100"
+     const result = fetch(url)
+        .then((response) => {
+            if(!response.ok){
+                return -1;
+            }
+            const request = response.json()
+            .then((data)=>{
+                let items = data.items;
+                let views = 0;
+                for (let i = 0; i < items.length; i++) {
+                        views += items[i].views;
+                    }
+                    return views;
+            })
+            return request;
+        })
+        .catch(()=>{
+            return -1;
+        })
+        return result;
+      
+        }
+        // let data = await response.json()
+        // let items = data.items
+        // let views = 0;
+        // for(let i = 0; i < items.length; i++ ){
+        //         views += items[i].views
+        // }        
+        // return views;
+
+//const url = "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/de.wikipedia.org/all-access/all-agents/JavaScript/monthly/2024010100/2025010100"
