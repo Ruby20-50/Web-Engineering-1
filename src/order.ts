@@ -88,6 +88,11 @@ export function orderPromise(friend: FriendP): Promise<string> {
  * @returns Versprechen, das es eine Pizza gibt!
  */
 export async function orderAsyncAwait(friend: FriendA): Promise<string> {
-    throw new Error("Function orderAsyncAwait not implemented");
+    
+    const arrive = await friend.driveToPizzeria()
+    const readMenu = await friend.readMenu()
+    const packed = await friend.selectPizza(readMenu[0])
+    const deliver = await friend.bringPizza()
+    return deliver;
 }
 
