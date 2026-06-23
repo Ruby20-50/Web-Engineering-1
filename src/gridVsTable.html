@@ -12,7 +12,39 @@
             color: black;
         }
 
-        /* Fügen Sie hier Ihre CSS-Regeln ein. */
+        .grid {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            border: 1px solid black;
+        }
+        .grid .title {
+            background-color: lightblue;
+        }
+        .grid > div {
+            border: 1px solid;
+         
+        }
+        /*.grid tr:nth-child(3){
+            background-color: lightyellow;
+        }*/
+        table{
+            table-layout: fixed;
+            width: auto;
+            border-collapse: collapse;
+        }
+        thead{
+            background-color: lightblue;
+        }
+        td {
+            border: 1px solid black;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        tbody tr:nth-child(1) , tr:nth-child(3), tr:nth-child(5),
+        tr:nth-child(7), tr:nth-child(9) {
+            background-color: lightyellow;
+        }
+
     </style>
 
 </head>
