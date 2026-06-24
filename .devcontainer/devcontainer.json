@@ -24,8 +24,7 @@
 		"vscode": {
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
-				"-github.copilot",
-				"-github.copilot-chat",
+				"live preview",
 				"donjayamanne.githistory",
 				"firefox-devtools.vscode-firefox-debug",
 				"humao.rest-client",
