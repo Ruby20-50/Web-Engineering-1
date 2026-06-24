@@ -20,13 +20,19 @@
         .grid .title {
             background-color: lightblue;
         }
-        .grid > div {
-            border: 1px solid;
-         
+        div {
+            border: 1px solid;  
         }
-        .grid dev:nth-child(4){
+        .data:nth-child(3n+1) {
+             font-weight: bold;
+        }
+        .grid .data:nth-child(6n+4),
+        .data:nth-child(6n+5),
+        .data:nth-child(6n+6) {
             background-color: lightyellow;
         }
+
+
         table{
             table-layout: fixed;
             width: auto;
@@ -40,11 +46,18 @@
             padding-left: 10px;
             padding-right: 10px;
         }
-        tbody tr:nth-child(1) , tr:nth-child(3), tr:nth-child(5),
-        tr:nth-child(7), tr:nth-child(9) {
-            background-color: lightyellow;
+        tbody tr:nth-child(1),
+        tr:nth-child(3),
+        tr:nth-child(5),
+        tr:nth-child(7),
+        tr:nth-child(9) {
+        background-color: lightyellow;
         }
-
+       tbody tr td:first-child {
+           font-weight: bold;
+        }
+       
+       
     </style>
 
 </head>
