@@ -36,25 +36,26 @@
            
         }
       
-        /* @media screen and (min-width: 700px) {
+        @media screen and (min-width: 700px) {
             .sheet{
+                display: grid;
                 grid-template-columns: auto auto auto;
                 border: 2px solid rgb(230, 132, 132);
                 gap: 0;
             }
-            .item .label {
-                display: flex;
-                flex-direction: row;
-               /* display: contents; */
-                /* border: none;
-                
-            } */
-
-            /* .item:first-child .label{
-               display: flex;
-               flex-direction: row;
+            .item:first-child {
+                  grid-auto-flow: column;
+            }
+            
+            .item:first-child .label{
+                grid-row-start: 1;
+            }
+            
+            .item{
+                display: contents;
 
             }
+           
             .item:not(:first-child) .label{
                 display: none;
             }
@@ -63,10 +64,8 @@
                 border-collapse: collapse;
                 gap: 0;
                 margin: 0;
-
-            }
-            
-        } */ 
+            }  
+        } 
        
        
     </style>
