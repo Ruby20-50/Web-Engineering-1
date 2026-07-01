@@ -11,6 +11,41 @@
             background-color: white;
             color: black;
         }
+        table{
+            table-layout: fixed;
+            width: 90%;
+            border-collapse: collapse;
+        }
+        thead{
+            background-color: lightblue;
+            font-weight: bold;
+        }
+        td {
+            border: 1px solid black;
+            padding-left: 10px;
+            padding-right: 10px;
+            overflow: hidden;
+        }
+        tbody tr:nth-child(1),
+        tr:nth-child(3),
+        tr:nth-child(5),
+        tr:nth-child(7),
+        tr:nth-child(9) {
+        background-color: lightyellow;
+        }
+       tbody tr td:first-child {
+           font-weight: bold;
+        }
+        td:nth-child(1) {
+            width: 20%;
+            text-align: center;
+        }
+        td:nth-child(2), td:nth-child(3){
+            width: 40%;
+            text-align: left;
+            
+        }
+       
 
         /* fügen Sie hier ihre Styles ein */
     </style>
