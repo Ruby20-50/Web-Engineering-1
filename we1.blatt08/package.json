@@ -1,0 +1,15 @@
+{
+  "name": "we1.blatt08",
+  "version": "1.0.0",
+  "description": "Web Engineering 1, Blatt 08",
+  "scripts": {
+    "abgabe": "ziplocalgit zip -f abgabe_Blatt_08.zip",
+    "clean": "rimraf dist coverage junit.xml abgabe_Blatt_08.zip all.log"
+  },
+  "devDependencies": {
+    "rimraf": "6.1.2",
+    "ziplocalgit": "1.0.10"
+  },
+  "dependencies": {
+  }
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sheet</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12pt;
+            background-color: white;
+            color: black;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            border: 1px solid black;
+        }
+        .grid .title {
+            background-color: lightblue;
+        }
+        div {
+            border: 1px solid;  
+        }
+        .data:nth-child(3n+1) {
+             font-weight: bold;
+        }
+        .grid .data:nth-child(6n+4),
+        .data:nth-child(6n+5),
+        .data:nth-child(6n+6) {
+            background-color: lightyellow;
+        }
+
+
+        table{
+            table-layout: fixed;
+            width: auto;
+            border-collapse: collapse;
+        }
+        thead{
+            background-color: lightblue;
+        }
+        td {
+            border: 1px solid black;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        tbody tr:nth-child(1),
+        tr:nth-child(3),
+        tr:nth-child(5),
+        tr:nth-child(7),
+        tr:nth-child(9) {
+        background-color: lightyellow;
+        }
+       tbody tr td:first-child {
+           font-weight: bold;
+        }
+       
+       
+    </style>
+
+</head>
+<!-- *******************************************************************************************
+     Der Body und alle darin enthaltenen Elemente dürfen auf keinen Fall verändert werden! 
+     Falls hier etwas verändert wird, kann die automatische Korrektur nicht mehr funktionieren.
+     In diesem Fall wird die Lösung mit 5,0 bewertet -- dies wird dann auch nicht mehr manuell korrigiert.
+     *******************************************************************************************
+ -->
+<body>
+
+    <h1>Grid</h1>
+    <div class="grid">
+
+        <div class="title">Year</div>
+        <div class="title">Director</div>
+        <div class="title">Title</div>
+
+        <div class="data">1968</div>
+        <div class="data">Stanley Kubrick</div>
+        <div class="data">2001: A Space Odyssey</div>
+
+        <div class="data">1999</div>
+        <div class="data">Andy Wachowski, Lana Wachowski</div>
+        <div class="data">The Matrix</div>
+
+        <div class="data">2014</div>
+        <div class="data">Christopher Nolan</div>
+        <div class="data">Interstellar</div>
+
+        <div class="data">1979</div>
+        <div class="data">Ridley Scott</div>
+        <div class="data">Alien</div>
+
+        <div class="data">1982</div>
+        <div class="data">Ridley Scott</div>
+        <div class="data">Blade Runner</div>
+
+        <div class="data">1984</div>
+        <div class="data">David Lynch</div>
+        <div class="data">Dune</div>
+
+        <div class="data">1972</div>
+        <div class="data">Andrei Tarkowski</div>
+        <div class="data">Solaris</div>
+
+        <div class="data">1996</div>
+        <div class="data">Jonathan Frakes</div>
+        <div class="data">Star Trek: First Contact</div>
+
+        <div class="data">2016</div>
+        <div class="data">Denis Villeneuve</div>
+        <div class="data">Arrival</div>
+
+        <div class="data">1977</div>
+        <div class="data">George Lucas</div>
+        <div class="data">Star Wars</div>
+
+    </div>
+
+    <h1>Table</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>Year</td>
+                <td>Director</td>
+                <td>Title</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1968</td>
+                <td>Stanley Kubrick</td>
+                <td>2001: A Space Odyssey</td>
+            </tr>
+            <tr>
+                <td>1999</td>
+                <td>Andy Wachowski, Lana Wachowski</td>
+                <td>The Matrix</td>
+            </tr>
+            <tr>
+                <td>2014</td>
+                <td>Christopher Nolan</td>
+                <td>Interstellar</td>
+            </tr>
+            <tr>
+                <td>1979</td>
+                <td>Ridley Scott</td>
+                <td>Alien</td>
+            </tr>
+            <tr>
+                <td>1982</td>
+                <td>Ridley Scott</td>
+                <td>Blade Runner</td>
+            </tr>
+            <tr>
+                <td>1984</td>
+                <td>David Lynch</td>
+                <td>Dune</td>
+            </tr>
+            <tr>
+                <td>1972</td>
+                <td>Andrei Tarkowski</td>
+                <td>Solaris</td>
+            </tr>
+            <tr>
+                <td>1996</td>
+                <td>Jonathan Frakes</td>
+                <td>Star Trek: First Contact</td>
+            </tr>
+            <tr>
+                <td>2016</td>
+                <td>Denis Villeneuve</td>
+                <td>Arrival</td>
+            </tr>
+            <tr>
+                <td>1977</td>
+                <td>George Lucas</td>
+                <td>Star Wars</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
