@@ -1,0 +1,75 @@
+{
+  // Copilot Settings, cf. https://code.visualstudio.com/docs/copilot/reference/copilot-settings
+  // General Copilot Settings 
+  "chat.commandCenter.enabled": false,
+  "workbench.settings.showAISearchToggle": false,
+  "search.searchView.keywordSuggestions": false,
+  "chat.disableAIFeatures": false,
+  // Code editing settings
+  "github.copilot.editor.enableCodeActions": false,
+  "github.copilot.renameSuggestions.triggerAutomatically": false,
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "typescript": false,
+    "javascript": false
+  },
+  "github.copilot.nextEditSuggestions.enabled": false,
+  "editor.inlineSuggest.edits.allowCodeShifting": "never",
+  "editor.inlineSuggest.edits.renderSideBySide": "never",
+  "github.copilot.nextEditSuggestions.fixes": false,
+  "editor.inlineSuggest.edits.showCollapsed": false,
+  "editor.inlineSuggest.showToolbar": "never",
+  // Chat settings
+  "github.copilot.chat.localeOverride": "ja",
+  "github.copilot.chat.useProjectTemplates": false,
+  "github.copilot.chat.scopeSelection": false,
+  "chat.detectParticipant.enabled": false,
+  "chat.checkpoints.enabled": false,
+  "chat.editRequests": "none",
+  "workbench.browser.enableChatTools": false,
+  // Agent settings
+  "chat.agent.enabled": false,
+  "github.copilot.chat.agent.autoFix": false,
+  "chat.autopilot.enabled": false,
+  "github.copilot.chat.claudeAgent.enabled": false,
+  // Agent sessions
+  "chat.viewSessions.enabled": false,
+  "chat.agentsControl.enabled": false,
+  "chat.unifiedAgentsBar.enabled": false,
+  // Code review settings
+  "github.copilot.chat.reviewSelection.enabled": false,
+  // 'Agent skills settings'
+  "chat.useAgentSkills": false,
+  // Agent Plugin Settings
+  "chat.plugins.enabled": false,
+  // other settings not listed on https://code.visualstudio.com/docs/copilot/reference/copilot-settings
+  "github.copilot.chat.copilotDebugCommand.enabled": false,
+  "github.copilot.chat.reviewAgent.enabled": false,
+  "chat.extensionTools.enabled": false,
+  // Hide config folders
+  "files.exclude": {
+    ".vscode": true,
+    ".devcontainer": true,
+  },
+  // Telemetry
+  "redhat.telemetry.enabled": false,
+  "telemetry.feedback.enabled": false,
+  "github.copilot.chat.otel.enabled": false,
+  // Testing
+  "jest.useJest30": true,
+  "jest.outputConfig": {
+    "clearOnRun": "none",
+    "revealOn": "demand",
+    "revealWithFocus": "none"
+  },
+  "jest.runMode": {
+    "deferred": true,
+    "testFileOnly": true,
+    "type": "on-save"
+  },
+  "testing.automaticallyOpenTestResults": "neverOpen",
+  // Other
+  "js/ts.preferences.importModuleSpecifier": "relative" 
+}
