@@ -59,7 +59,7 @@ export class Waage {
           return -1;
          if(this.letztesGewicht > this.vorherigeGewicht)
             return 1;
-            return 0;
+        return 0;
     }
     
     getMin() : number {

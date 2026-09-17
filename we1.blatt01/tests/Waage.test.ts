@@ -17,7 +17,8 @@ test("getLetztesGewicht nach regestierung", ()=>{
 
 test("registriere, erfolgreich", () => {
     const testee = new Waage();
-    testee.registriere(1); // soll so funktionieren, also keinen Fehler werfen
+    expect(() => testee.registriere(1)).not.toThrow(); // soll so funktionieren, also keinen Fehler werfen
+    
 })
 
 test("registriere, Waagezahl darf nicht kleiner 0 sein", () => {
@@ -55,7 +56,7 @@ test("getTrend gleichbleibend", ()=>{
     scale.registriere(55);
     expect(scale.getTrend()).toBe(0);
 });
-test("getTrend", ()=>{
+test("getTrend throws an error", ()=>{
     const scale = new Waage();
     expect(()=>scale.getTrend()).toThrow();
 
