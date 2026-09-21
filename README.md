@@ -12,6 +12,7 @@ the course for each fork.
 |---|---|---|
 | [`we1.blatt01`](we1.blatt01) | `Waage` class | TypeScript class fundamentals: fields, constructor, methods |
 | [`we1.blatt02`](we1.blatt02) | `conversions.ts`, `quiz.ts` | Type conversions, plus expressions/operators in JavaScript/TypeScript |
+| [`we1.blatt03`](we1.blatt03) | `leetSpeak.ts`, `simpleCSV.ts` | String processing: iterative and recursive letter substitution (leetspeak), plus parsing CSV text into a 2D array |
 | [`we1.blatt05`](we1.blatt05) | `VierGewinnt` | Implementing the game logic for Connect Four (board, moves, types) |
 | [`we1.blatt06`](we1.blatt06) | `order.ts`, `wikipediaPageViews.ts`, `friends/` | Synchronous vs. asynchronous programming, Promises, accessing the Wikipedia pageviews API |
 | [`we1.blatt08`](we1.blatt08) | `responsiveItems.html`, `gridVsTable.html`, `appwindow.html` | Pure HTML/CSS: grid vs. table layout and responsive design (no JS/TS) |
