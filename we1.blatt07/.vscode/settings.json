@@ -1,0 +1,47 @@
+{
+    "chat.disableAIFeatures": false,
+    "chat.agent.enabled": false,
+    "terminal.integrated.initialHint": false,
+    "chat.extensionTools.enabled": false,
+    "github.copilot.enable": {
+        "*": false
+    },
+    "chat.mcp.access": "none",
+    "workbench.editor.empty.hint": "hidden",
+    "accessibility.verbosity.inlineChat": false,
+    "accessibility.verbosity.panelChat": false,
+    "chat.agent.maxRequests": 0,
+    "chat.detectParticipant.enabled": false,
+    "chat.implicitContext.enabled": {
+        "panel": "never"
+    },
+    "chat.implicitContext.suggestedContext": false,
+    "chat.instructionsFilesLocations": {
+        ".github/instructions": false
+    },
+    "chat.mcp.discovery.enabled": {
+        "claude-desktop": false,
+        "windsurf": false,
+        "cursor-global": false,
+        "cursor-workspace": false
+    },
+    "chat.promptFilesLocations": {
+        ".github/prompts": false
+    },
+    "chat.sendElementsToChat.attachImages": false,
+    "chat.useAgentsMdFile": false,
+    "github.copilot.editor.enableCodeActions": false,
+    "github.copilot.nextEditSuggestions.enabled": false,
+    "github.copilot.renameSuggestions.triggerAutomatically": false,
+    "workbench.settings.showAISearchToggle": false,
+    "jest.runMode": {
+        "type": "on-save",
+        "testFileOnly": true,
+        "deferred": true
+    },
+    "jest.outputConfig": {
+        "revealOn": "demand",
+        "revealWithFocus": "none",
+        "clearOnRun": "none"
+    }
+}

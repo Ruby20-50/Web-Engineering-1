@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Syntax Highlighting</title>
+
+    <style>
+        body {
+            background-color: #1E1E1E;
+            color: white;
+        }
+        .anweisung{ 
+            color: #C586C0;
+        }
+        .schluesselwort{
+            color:#569CD6; 
+        }
+        .identifier{
+            color: #4EC9B0;
+        }
+        .markiert .identifier{
+            color: #75A3BB;
+        }
+        .markiert{
+            background-color: #D4D4D433;
+        }
+        .typannotation{
+            color: #4EC9B0;
+        }
+        #close3, #open3, #close5, #open4, #close4, #open5, #open2, #close2{
+            color: #DA70D6;
+        }
+        #close1, #open1{
+            color: #FFD700;
+        }
+        .stringliteral{
+            color: #CE9178;
+        }
+        .fehler{
+            text-decoration: underline wavy #F14C4C;
+        }
+        /* .fehler .identifier{
+            color: #9cdcfe;
+        } */
+        .konstruktor .identifier{
+            color: #9cdcfe;
+        }
+        .identifier .unused {
+            color:  #75A3BB;
+        }
+        .methode .identifier{
+            color: #9CDCFE;
+        }
+
+
+
+
+        /**
+        #1E1E1E - dunkelgrau, #D4D4D4 - hellgrau, #C586C0 - lila,   #569CD6 - blau
+        #4EC9B0 - hellgrün,   #9CDCFE - hellblau, #DCDCAA - gelb,   #CE9178 - braun
+        #FFD700 - orange,     #DA70D6 - lila,     #75A3BB - graublau, #F14C4C - rot
+        #D4D4D433 -- grau transparent
+        */
+        
+        /* Geben Sie hier hier CSS-Regeln ein. */
+    </style>
+</head>
+
+<!-- *******************************************************************************************
+     Der Body und alle darin enthaltenen Elemente dürfen auf keinen Fall verändert werden! 
+     Falls hier etwas verändert wird, kann die automatische Korrektur nicht mehr funktionieren.
+     In diesem Fall wird die Lösung mit 5,0 bewertet -- dies wird dann auch nicht mehr manuell korrigiert.
+     *******************************************************************************************
+ -->
+<body>
+
+    <pre class="typescript">
+    <span class="klasse">    
+    <span class="anweisung">export</span> <span class="schluesselwort">class</span> <span class="identifier">Notiz</span> <span id="open1">{</span>
+        <span class="schluesselwort">private</span> <span class="markiert"><span class="identifier">text</span>: <span class="typannotation">string</span></span>;
+        <span class="konstruktor">
+        <span class="schluesselwort">constructor</span><span id="open2">(</span><span class="markiert"><span class="identifier unused">text</span>: <span class="typannotation">string</span></span><span id="close2">)</span> <span id="open3">{</span>
+            <span class="schluesselwort">this</span>.<span class="identifier">text</span> = <span class="fehler"><span class="identifier">textX</span></span>;
+        <span id="close3">}</span></span>
+        <span class="methode">
+        <span class="identifier">formatiert</span><span id="open4">(</span><span id="close4">)</span>: <span class="typannotation">string</span> <span id="open5">{</span>
+            <span class="anweisung">return</span> <span class="stringliteral">"Note: "</span> + <span class="schluesselwort">this</span>.<span class="identifier">text</span>;
+        <span id="close5">}</span></span>
+    <span id="close1">}</span>
+    </span>
+    </pre>
+
+
+</body>
+
+</html>

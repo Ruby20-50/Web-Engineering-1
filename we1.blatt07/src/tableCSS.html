@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sheet</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12pt;
+            background-color: white;
+            color: black;
+        }
+        table{
+            table-layout: fixed;
+            width: 90%;
+            border-collapse: collapse;
+        }
+        thead{
+            background-color: lightblue;
+            font-weight: bold;
+        }
+        td {
+            border: 1px solid black;
+            padding-left: 10px;
+            padding-right: 10px;
+            overflow: hidden;
+        }
+        tbody tr:nth-child(1),
+        tr:nth-child(3),
+        tr:nth-child(5),
+        tr:nth-child(7),
+        tr:nth-child(9) {
+        background-color: lightyellow;
+        }
+       tbody tr td:first-child {
+           font-weight: bold;
+        }
+        td:nth-child(1) {
+            width: 20%;
+            text-align: center;
+        }
+        td:nth-child(2), td:nth-child(3){
+            width: 40%;
+            text-align: left;
+            
+        }
+       
+
+        /* fügen Sie hier ihre Styles ein */
+    </style>
+</head>
+<!-- *******************************************************************************************
+     Der Body und alle darin enthaltenen Elemente dürfen auf keinen Fall verändert werden! 
+     Falls hier etwas verändert wird, kann die automatische Korrektur nicht mehr funktionieren.
+     In diesem Fall wird die Lösung mit 5,0 bewertet -- dies wird dann auch nicht mehr manuell korrigiert.
+     *******************************************************************************************
+ -->
+<body>
+
+    <h1>Top 10 Sci-Fi Movies</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>Year</td>
+                <td>Director</td>
+                <td>Title</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1968</td>
+                <td>Stanley Kubrick</td>
+                <td>2001: A Space Odyssey</td>
+            </tr>
+            <tr>
+                <td>1999</td>
+                <td>Andy Wachowski, Lana Wachowski</td>
+                <td>The Matrix</td>
+            </tr>
+            <tr>
+                <td>2014</td>
+                <td>Christopher Nolan</td>
+                <td>Interstellar</td>   
+            </tr>
+            <tr>
+                <td>1979</td>
+                <td>Ridley Scott</td>
+                <td>Alien</td>
+            </tr>
+            <tr>
+                <td>1982</td>
+                <td>Ridley Scott</td>
+                <td>Blade Runner</td>
+            </tr>
+            <tr>
+                <td>1984</td>
+                <td>David Lynch</td>
+                <td>Dune</td>
+            </tr>
+            <tr>
+                <td>1972</td>
+                <td>Andrei Tarkowski</td>
+                <td>Solaris</td>
+            </tr>
+            <tr>
+                <td>1996</td>
+                <td>Jonathan Frakes</td>
+                <td>Star Trek: First Contact</td>    
+            </tr>
+            <tr>
+                <td>2016</td>
+                <td>Denis Villeneuve</td>
+                <td>Arrival</td>
+            </tr>
+            <tr>
+                <td>1977</td>
+                <td>George Lucas</td>
+                <td>Star Wars</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
